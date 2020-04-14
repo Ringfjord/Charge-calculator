@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+      text-align: center;
+      font-family: calibri;
+
+}
+h2{
+color:red;
+}
+</style>
+
+</head>
+<body>
+    <h1>Battery charge calaulator</h1>
+    <p>This is a simple calculator that will help you calculate the amount of ampere to use when charging your batteries. </p><br>
+      <p>How many batteries are you going to charge?</p>
+      <select name="drpBatteries" id="drpBatteries" class="drpList" style="height:20px;width:57px;">
+
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+
+      <p>What charge rate (C) would you like to use?</p>
+      <select name="drpcRate" id="drpcRate" class="drpList" style="height:20px;width:57px;">
+
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <p>Enter the capacity (mah) of your battery.</p>
+      <input id="mahinput" type="text" maxlength="4" size="4" oninput="calculate();" /><br>
+
+      <h2>Charge at <span id = "result"></span>&nbsp;ampere.</h2><br>
+
+    <input type="button" onClick="calculate()" Value="Recalculate" /><br>
+    <i>This button is used when a new value has been entered.</i>
+  <script>
+      function calculate() 
+      {
+          num1 = document.getElementById('drpBatteries').value; 
+          num2 = document.getElementById('drpcRate').value;
+          num3 = document.getElementById('mahinput').value;
+        document.getElementById('result').innerHTML = num1 * num2 * num3/1000
+      }
+  </script>
+</body>
+</html>
